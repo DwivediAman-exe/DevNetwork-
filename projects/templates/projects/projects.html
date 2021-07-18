@@ -4,20 +4,12 @@
 
 <p>hello you are on the {{ page }} page</p>
 
-{% if number > 10 %}
-<p>Number is greater than 10</p>
-
-{% elif %}
-<p>Numebr is less than 10</p>
-
-{% endif %}
-
 <h1>All Projects template</h1>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur adipisicing elit.
-	Suscipit itaque eveniet sapiente quasi atque iure
-	nulla,minima
-	delectus consequatur, mollitia possimus laboriosam. Enim cumque, fuga explicabo quidem laudantium obcaecati ea! </p>
+<ul>
+	{% for project in projects %}
+	<li>Title: <a href="{% url 'project' project.id %}">{{project.title}}</a> --- {{project.description}}</li>
+	{% endfor %}
+</ul>
 
 {% endblock content %}
